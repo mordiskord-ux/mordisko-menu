@@ -70,47 +70,98 @@ export default function Menu() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'sans-serif', padding: '20px' }}>
-      <header style={{ textAlign: 'center', marginBottom: '30px' }}>
-        <h1 style={{ fontSize: '2.5rem', fontStyle: 'italic', margin: '0' }}>MORDISKO</h1>
-        <p style={{ letterSpacing: '2px', color: '#ccc' }}>EMPANADAS & MUNCHIES</p>
+    <div style={{ backgroundColor: '#000000', color: '#ffffff', minHeight: '100vh', fontFamily: 'sans-serif', padding: '25px 15px' }}>
+      
+      {/* Cabecera con Nombre y Eslogan */}
+      <header style={{ textAlign: 'center', marginBottom: '35px' }}>
+        <h1 style={{ 
+          fontSize: '3.5rem', 
+          fontWeight: '900', 
+          fontStyle: 'italic', 
+          color: '#FFE600', 
+          margin: '0', 
+          letterSpacing: '2px'
+        }}>
+          MORDISKO
+        </h1>
+        <p style={{ letterSpacing: '4px', color: '#ffffff', fontSize: '0.9rem', marginTop: '5px', fontWeight: 'bold' }}>
+          EMPANADAS & MUNCHIES
+        </p>
       </header>
 
-      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+      {/* Buscador */}
+      <div style={{ textAlign: 'center', marginBottom: '35px' }}>
         <input 
           type="text" 
           placeholder="🔎 Buscar en el menú..." 
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
-          style={{ padding: '10px 15px', width: '80%', maxWidth: '400px', borderRadius: '20px', border: 'none' }}
+          style={{ 
+            padding: '12px 20px', 
+            width: '90%', 
+            maxWidth: '500px', 
+            borderRadius: '25px', 
+            border: '2px solid #FFE600',
+            backgroundColor: '#111111',
+            color: '#ffffff',
+            fontSize: '1rem',
+            outline: 'none'
+          }}
         />
       </div>
 
-      {menuData.map((sec, idx) => {
-        const itemsFiltrados = sec.items.filter(item => 
-          item.nombre.toLowerCase().includes(busqueda.toLowerCase()) || 
-          item.descripcion.toLowerCase().includes(busqueda.toLowerCase())
-        );
+      {/* Contenedor del menú */}
+      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        {menuData.map((sec, idx) => {
+          const itemsFiltrados = sec.items.filter(item => 
+            item.nombre.toLowerCase().includes(busqueda.toLowerCase()) || 
+            item.descripcion.toLowerCase().includes(busqueda.toLowerCase())
+          );
 
-        if (itemsFiltrados.length === 0) return null;
+          if (itemsFiltrados.length === 0) return null;
 
-        return (
-          <div key={idx} style={{ marginBottom: '40px' }}>
-            <h2 style={{ borderBottom: '2px solid #e50914', paddingBottom: '5px', color: '#e50914' }}>{sec.categoria}</h2>
-            <div>
-              {itemsFiltrados.map((item, i) => (
-                <div key={i} style={{ margin: '15px 0', padding: '10px', backgroundColor: '#111', borderRadius: '8px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
-                    <span>{item.nombre}</span>
-                    <span style={{ color: '#00ff88' }}>{item.precio}</span>
+          return (
+            <div key={idx} style={{ marginBottom: '45px' }}>
+              <h2 style={{ 
+                borderBottom: '2px solid #FFE600', 
+                paddingBottom: '8px', 
+                color: '#FFE600', 
+                fontSize: '1.6rem',
+                fontWeight: 'bold',
+                letterSpacing: '1px'
+              }}>
+                {sec.categoria}
+              </h2>
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', 
+                gap: '15px', 
+                marginTop: '20px' 
+              }}>
+                {itemsFiltrados.map((item, i) => (
+                  <div key={i} style={{ 
+                    padding: '16px', 
+                    backgroundColor: '#111111', 
+                    borderRadius: '12px',
+                    border: '1px solid #FFE600',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justify: 'space-between'
+                  }}>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '10px' }}>
+                        <span style={{ fontWeight: 'bold', fontSize: '1.05rem', color: '#ffffff' }}>{item.nombre}</span>
+                        <span style={{ color: '#FFE600', fontWeight: 'bold', fontSize: '1.05rem', whiteSpace: 'nowrap' }}>{item.precio}</span>
+                      </div>
+                      <p style={{ fontSize: '0.88rem', color: '#cccccc', marginTop: '8px', lineHeight: '1.4' }}>{item.descripcion}</p>
+                    </div>
                   </div>
-                  <p style={{ fontSize: '0.9rem', color: '#aaa', marginTop: '5px' }}>{item.descripcion}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
