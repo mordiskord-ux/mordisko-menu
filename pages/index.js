@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export default function Menu() {
   const [busqueda, setBusqueda] = useState('');
 
-  // Enlace directo de la imagen de tu logo
+  // Logo oficial de Mordisko
   const logoUrl = 'https://i.imgur.com/8QG3y14.jpg';
 
   const menuData = [
@@ -74,100 +74,82 @@ export default function Menu() {
 
   return (
     <div style={{
-      backgroundColor: '#0a0a0c',
-      color: '#f8fafc',
+      backgroundColor: '#000000',
+      color: '#ffffff',
       minHeight: '100vh',
       fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
       padding: '30px 16px 60px'
     }}>
       
-      {/* Cabecera Principal con el Logo */}
+      {/* Encabezado con Logo y Título */}
       <header style={{ textAlign: 'center', marginBottom: '40px' }}>
         <div style={{ marginBottom: '15px' }}>
           <img 
             src={logoUrl} 
             alt="Mordisko Logo" 
             style={{ 
-              width: '140px', 
-              height: '140px', 
+              width: '130px', 
+              height: '130px', 
               objectFit: 'cover',
               borderRadius: '50%',
-              border: '3px solid #ffe600',
-              boxShadow: '0 0 20px rgba(255, 230, 0, 0.3)'
+              border: '3px solid #FFE600',
+              boxShadow: '0 0 15px rgba(255, 230, 0, 0.4)'
             }} 
           />
         </div>
 
-        <div style={{
-          display: 'inline-block',
-          padding: '6px 16px',
-          backgroundColor: '#ffe60020',
-          border: '1px solid #ffe60040',
-          borderRadius: '20px',
-          color: '#ffe600',
-          fontSize: '0.8rem',
-          fontWeight: '700',
-          letterSpacing: '2px',
-          marginBottom: '12px',
-          textTransform: 'uppercase'
-        }}>
-          Menú Digital
-        </div>
-
         <h1 style={{
-          fontSize: '3.5rem',
+          fontSize: '3.6rem',
           fontWeight: '900',
           fontStyle: 'italic',
-          color: '#ffe600',
+          color: '#FFE600',
           margin: '0',
           letterSpacing: '2px',
-          lineHeight: '1',
-          textShadow: '0 4px 20px rgba(255, 230, 0, 0.25)'
+          lineHeight: '1'
         }}>
           MORDISKO
         </h1>
 
         <p style={{
           letterSpacing: '5px',
-          color: '#94a3b8',
+          color: '#ffffff',
           fontSize: '0.85rem',
           marginTop: '10px',
-          fontWeight: '600',
+          fontWeight: '700',
           textTransform: 'uppercase'
         }}>
           Empanadas & Munchies
         </p>
       </header>
 
-      {/* Buscador Interactivo */}
+      {/* Buscador de Platos */}
       <div style={{ textAlign: 'center', marginBottom: '45px' }}>
         <div style={{
           position: 'relative',
-          maxWidth: '520px',
+          maxWidth: '500px',
           margin: '0 auto'
         }}>
           <input 
             type="text" 
-            placeholder="🔍  Buscar plato, ingrediente..." 
+            placeholder="🔎  Buscar en el menú..." 
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
             style={{
               width: '100%',
-              padding: '16px 22px',
-              borderRadius: '16px',
-              border: '1px solid #27272a',
-              backgroundColor: '#18181b',
+              padding: '14px 20px',
+              borderRadius: '25px',
+              border: '2px solid #FFE600',
+              backgroundColor: '#111111',
               color: '#ffffff',
               fontSize: '1rem',
               outline: 'none',
-              boxShadow: '0 10px 25px -5px rgba(0,0,0,0.5)',
               boxSizing: 'border-box'
             }}
           />
         </div>
       </div>
 
-      {/* Grid de Categorías */}
+      {/* Contenedor del Menú */}
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         {menuData.map((sec, idx) => {
           const itemsFiltrados = sec.items.filter(item => 
@@ -178,17 +160,17 @@ export default function Menu() {
           if (itemsFiltrados.length === 0) return null;
 
           return (
-            <div key={idx} style={{ marginBottom: '55px' }}>
+            <div key={idx} style={{ marginBottom: '50px' }}>
               
               {/* Título de Categoría */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '15px',
-                marginBottom: '22px'
+                marginBottom: '20px'
               }}>
                 <h2 style={{
-                  color: '#ffffff',
+                  color: '#FFE600',
                   fontSize: '1.4rem',
                   fontWeight: '800',
                   letterSpacing: '1px',
@@ -197,25 +179,24 @@ export default function Menu() {
                 }}>
                   {sec.categoria}
                 </h2>
-                <div style={{ flex: '1', height: '1px', backgroundColor: '#27272a' }}></div>
+                <div style={{ flex: '1', height: '1px', backgroundColor: '#333333' }}></div>
               </div>
 
-              {/* Tarjetas de Menú */}
+              {/* Tarjetas de Cada Plato */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-                gap: '18px'
+                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gap: '16px'
               }}>
                 {itemsFiltrados.map((item, i) => (
                   <div key={i} style={{
-                    padding: '20px',
-                    backgroundColor: '#131316',
-                    borderRadius: '16px',
-                    border: '1px solid #27272a',
+                    padding: '18px',
+                    backgroundColor: '#111111',
+                    borderRadius: '14px',
+                    border: '1px solid #FFE600',
                     display: 'flex',
                     flexDirection: 'column',
-                    justify: 'space-between',
-                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)'
+                    justify: 'space-between'
                   }}>
                     <div>
                       <div style={{
@@ -223,21 +204,21 @@ export default function Menu() {
                         justify: 'space-between',
                         alignItems: 'flex-start',
                         gap: '12px',
-                        marginBottom: '10px'
+                        marginBottom: '8px'
                       }}>
                         <span style={{
                           fontWeight: '700',
                           fontSize: '1.05rem',
-                          color: '#ffffff',
-                          letterSpacing: '0.3px'
+                          color: '#ffffff'
                         }}>
                           {item.nombre}
                         </span>
                         
+                        {/* Etiqueta Destacada de Precio */}
                         <span style={{
-                          backgroundColor: '#ffe600',
+                          backgroundColor: '#FFE600',
                           color: '#000000',
-                          fontWeight: '800',
+                          fontWeight: '900',
                           fontSize: '0.9rem',
                           padding: '4px 10px',
                           borderRadius: '8px',
@@ -249,9 +230,9 @@ export default function Menu() {
                       
                       <p style={{
                         fontSize: '0.88rem',
-                        color: '#a1a1aa',
+                        color: '#cccccc',
                         margin: '0',
-                        lineHeight: '1.5'
+                        lineHeight: '1.4'
                       }}>
                         {item.descripcion}
                       </p>
