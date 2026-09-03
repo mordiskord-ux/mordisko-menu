@@ -13,6 +13,13 @@ const MENU_DATA = {
     { name: "HUEVO", price: "RD$60.00", desc: "Relleno de huevo con un sabor sencillo, casero y delicioso." },
     { name: "POLLO Y QUESO", price: "RD$60.00", desc: "Pollo sazonado y queso fundido en una combinación irresistible." }
   ],
+  "PA PICAR 🍟": [
+    { name: "NACHOS CON QUESO FUNDIDO", price: "RD$150.00", desc: "Nachos crujientes cubiertos con queso fundido, perfectos para picar." },
+    { name: "NACHOS FULL DE TO", price: "RD$300.00", desc: "Nachos bien cargados con una combinación de ingredientes para compartir y disfrutar." },
+    { name: "CROQUETA DE POLLO", price: "RD$50.00", desc: "Crujiente por fuera y suave por dentro, con un sabroso relleno de pollo." },
+    { name: "QUIPES DE RES", price: "RD$50.00", desc: "Quipes doraditos y crujientes, con un relleno de carne de res bien sazonada." },
+    { name: "MOZZARELLA STICK", price: "RD$150.00", desc: "Palitos de mozzarella dorados y crujientes, con queso fundido en cada mordida." }
+  ],
   "OTROS MUNCHIES 🍔": [
     { name: "CLUB SANDWICH", price: "RD$350.00", desc: "Pan tostado, pollo, jamón, queso, lechuga, tomate y mayonesa, acompañado de papas fritas." },
     { name: "HAMBURGUESA BACON CHEESE", price: "RD$500.00", desc: "Jugosa carne de hamburguesa con queso y tocineta, preparada al estilo Mordisko." },
@@ -43,11 +50,6 @@ const MENU_DATA = {
     { name: "PECHUGA A LA PLANCHA", price: "RD$450.00", desc: "Pechuga de pollo a la plancha, doradita por fuera y jugosa por dentro." },
     { name: "PECHUGA AL LIMÓN", price: "RD$450.00", desc: "Pechuga de pollo con un toque de limón que aporta frescura y sabor." },
     { name: "PECHUGA A LA CREMA", price: "RD$450.00", desc: "Pechuga de pollo bañada en una salsa cremosa, suave y deliciosa." }
-  ],
-  "PA PICAR 🍟": [
-    { name: "CROQUETA DE POLLO", price: "RD$50.00", desc: "Crujiente por fuera y suave por dentro, con un sabroso relleno de pollo." },
-    { name: "QUIPES DE RES", price: "RD$50.00", desc: "Quipes doraditos y crujientes, con un relleno de carne de res bien sazonada." },
-    { name: "MOZZARELLA STICK", price: "RD$150.00", desc: "Palitos de mozzarella dorados y crujientes, con queso fundido en cada mordida." }
   ],
   "LA COMPETENCIA DE LOS CHINOS 🍗": [
     { name: "PICA POLLO", price: "RD$290.00", desc: "Pollo frito crujiente y bien sazonado, al clásico estilo dominicano." },
