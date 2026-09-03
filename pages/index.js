@@ -31,7 +31,12 @@ const MENU_DATA = {
     { name: "BURRITO DE POLLO", price: "RD$380.00" },
     { name: "BURRITO DE RES", price: "RD$350.00" },
     { name: "BURRITO POLLO ÁRABE", price: "RD$400.00" },
-    { name: "BURRITO MIXTO", price: "RD$400.00" }
+    { name: "BURRITO MIXTO", price: "RD$400.00" },
+    { name: "ALITAS BBQ", price: "RD$395.00" },
+    { name: "ALITAS RANCH", price: "RD$395.00" },
+    { name: "ALITAS PICANTES", price: "RD$395.00" },
+    { name: "ALITAS MIEL PICANTE", price: "RD$395.00" },
+    { name: "ALITAS AJO", price: "RD$395.00" }
   ],
   "PA LOS FIT 🥗": [
     { name: "ENSALADA MORDISKO", price: "RD$380.00" },
