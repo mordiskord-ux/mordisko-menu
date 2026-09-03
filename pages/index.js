@@ -3,56 +3,56 @@ import React, { useMemo, useState } from 'react';
 const MENU_DATA = {
   "EMPANADAS 🥟": [
     { name: "POLLO", price: "RD$60.00", desc: "Pollo sazonado y desmenuzado, jugoso y lleno de sabor." },
-    { name: "JAMÓN Y QUESO", price: "RD$60.00" },
-    { name: "PIZZA", price: "RD$60.00" },
-    { name: "POLLO QUESO Y MAÍZ", price: "RD$60.00" },
-    { name: "4 QUESOS", price: "RD$60.00" },
-    { name: "POLLO ÁRABE", price: "RD$60.00" },
-    { name: "LASAÑA", price: "RD$100.00" },
-    { name: "COSTILLA", price: "RD$100.00" },
-    { name: "HUEVO", price: "RD$60.00" },
-    { name: "POLLO Y QUESO", price: "RD$60.00" }
+    { name: "JAMÓN Y QUESO", price: "RD$60.00", desc: "Clásica combinación de jamón y queso en una masa doradita." },
+    { name: "PIZZA", price: "RD$60.00", desc: "Todo el sabor de una pizza en una empanada crujiente y sabrosa." },
+    { name: "POLLO QUESO Y MAÍZ", price: "RD$60.00", desc: "Pollo, queso y maíz en una combinación cremosa y deliciosa." },
+    { name: "4 QUESOS", price: "RD$60.00", desc: "Una mezcla de quesos para los amantes de un sabor bien cremoso." },
+    { name: "POLLO ÁRABE", price: "RD$60.00", desc: "Pollo sazonado con un toque de especias al estilo árabe." },
+    { name: "LASAÑA", price: "RD$100.00", desc: "El sabor de una lasaña clásica dentro de una empanada dorada." },
+    { name: "COSTILLA", price: "RD$100.00", desc: "Costilla sazonada y jugosa, con mucho sabor en cada mordida." },
+    { name: "HUEVO", price: "RD$60.00", desc: "Relleno de huevo con un sabor sencillo, casero y delicioso." },
+    { name: "POLLO Y QUESO", price: "RD$60.00", desc: "Pollo sazonado y queso fundido en una combinación irresistible." }
   ],
   "OTROS MUNCHIES 🍔": [
-    { name: "CLUB SANDWICH", price: "RD$350.00", desc: "Pan tostado, pollo, jamón, queso, lechuga, tomate y mayonesa. Servido con papas fritas." },
-    { name: "HAMBURGUESA BACON CHEESE", price: "RD$500.00" },
-    { name: "HAMBURGUESA CLÁSICA", price: "RD$450.00" },
-    { name: "HUEVO BURGUER", price: "RD$500.00" },
-    { name: "MORDISKO CRISPY CHICKEN", price: "RD$480.00" },
-    { name: "HOT DOG TRADICIONAL", price: "RD$150.00" },
-    { name: "HOT DOG FULL QUESO", price: "RD$190.00" },
-    { name: "QUESADILLA DE POLLO", price: "RD$380.00" },
-    { name: "QUESADILLA DE RES", price: "RD$380.00" },
-    { name: "QUESADILLA MIXTA", price: "RD$395.00" },
-    { name: "TACOS DE POLLO", price: "RD$195.00" },
-    { name: "TACOS DE RES", price: "RD$230.00" },
-    { name: "TACOS MIXTOS", price: "RD$250.00" },
-    { name: "TACOS POLLO ÁRABE", price: "RD$280.00" },
-    { name: "BURRITO DE POLLO", price: "RD$380.00" },
-    { name: "BURRITO DE RES", price: "RD$350.00" },
-    { name: "BURRITO POLLO ÁRABE", price: "RD$400.00" },
-    { name: "BURRITO MIXTO", price: "RD$400.00" },
-    { name: "ALITAS BBQ", price: "RD$395.00" },
-    { name: "ALITAS RANCH", price: "RD$395.00" },
-    { name: "ALITAS PICANTES", price: "RD$395.00" },
-    { name: "ALITAS MIEL PICANTE", price: "RD$395.00" },
-    { name: "ALITAS AJO", price: "RD$395.00" }
+    { name: "CLUB SANDWICH", price: "RD$350.00", desc: "Pan tostado, pollo, jamón, queso, lechuga, tomate y mayonesa, acompañado de papas fritas." },
+    { name: "HAMBURGUESA BACON CHEESE", price: "RD$500.00", desc: "Jugosa carne de hamburguesa con queso y tocineta, preparada al estilo Mordisko." },
+    { name: "HAMBURGUESA CLÁSICA", price: "RD$450.00", desc: "Carne de hamburguesa con lechuga, tomate, cebolla y tocineta, en nuestro pan clásico." },
+    { name: "HUEVO BURGUER", price: "RD$500.00", desc: "Hamburguesa con queso y huevo, combinando sabor y textura en cada mordida." },
+    { name: "MORDISKO CRISPY CHICKEN", price: "RD$480.00", desc: "Pollo crispy crujiente, preparado para disfrutar un bocado lleno de sabor." },
+    { name: "HOT DOG TRADICIONAL", price: "RD$150.00", desc: "Hot dog clásico, sencillo y sabroso, perfecto para quitarte el antojo." },
+    { name: "HOT DOG FULL QUESO", price: "RD$190.00", desc: "Hot dog cubierto con queso para darle ese toque cremoso y delicioso." },
+    { name: "QUESADILLA DE POLLO", price: "RD$380.00", desc: "Tortilla dorada rellena de pollo y queso, con una combinación suave y sabrosa." },
+    { name: "QUESADILLA DE RES", price: "RD$380.00", desc: "Tortilla dorada rellena de carne de res y queso, llena de sabor." },
+    { name: "QUESADILLA MIXTA", price: "RD$395.00", desc: "Pollo, res y queso en una tortilla dorada y llena de sabor." },
+    { name: "TACOS DE POLLO", price: "RD$195.00", desc: "Tacos rellenos de pollo sazonado y acompañados de ingredientes frescos." },
+    { name: "TACOS DE RES", price: "RD$230.00", desc: "Tacos de carne de res sazonada, con una combinación fresca y sabrosa." },
+    { name: "TACOS MIXTOS", price: "RD$250.00", desc: "La combinación de pollo y res en tacos llenos de sabor." },
+    { name: "TACOS POLLO ÁRABE", price: "RD$280.00", desc: "Tacos de pollo sazonado con un toque de especias al estilo árabe." },
+    { name: "BURRITO DE POLLO", price: "RD$380.00", desc: "Tortilla rellena de pollo sazonado y una combinación de ingredientes que complementan cada bocado." },
+    { name: "BURRITO DE RES", price: "RD$350.00", desc: "Burrito relleno de carne de res sazonada, suave por dentro y lleno de sabor." },
+    { name: "BURRITO POLLO ÁRABE", price: "RD$400.00", desc: "Pollo sazonado al estilo árabe envuelto en una tortilla suave y sabrosa." },
+    { name: "BURRITO MIXTO", price: "RD$400.00", desc: "Una combinación de pollo y res en un burrito abundante y lleno de sabor." },
+    { name: "ALITAS BBQ", price: "RD$395.00", desc: "Alitas de pollo bañadas en salsa BBQ, con un toque dulce y ahumado." },
+    { name: "ALITAS RANCH", price: "RD$395.00", desc: "Alitas de pollo con el clásico sabor cremoso del ranch." },
+    { name: "ALITAS PICANTES", price: "RD$395.00", desc: "Alitas de pollo con una salsa picante para los que disfrutan un buen toque de fuego." },
+    { name: "ALITAS MIEL PICANTE", price: "RD$395.00", desc: "Alitas bañadas en una combinación de miel dulce y picante." },
+    { name: "ALITAS AJO", price: "RD$395.00", desc: "Alitas con una cremosa salsa de ajo, llena de sabor y perfecta para acompañar." }
   ],
   "PA LOS FIT 🥗": [
-    { name: "ENSALADA MORDISKO", price: "RD$380.00" },
-    { name: "PECHUGA A LA PLANCHA", price: "RD$450.00" },
-    { name: "PECHUGA AL LIMÓN", price: "RD$450.00" },
-    { name: "PECHUGA A LA CREMA", price: "RD$450.00" }
+    { name: "ENSALADA MORDISKO", price: "RD$380.00", desc: "Ensalada fresca y ligera, preparada para una opción sabrosa y balanceada." },
+    { name: "PECHUGA A LA PLANCHA", price: "RD$450.00", desc: "Pechuga de pollo a la plancha, doradita por fuera y jugosa por dentro." },
+    { name: "PECHUGA AL LIMÓN", price: "RD$450.00", desc: "Pechuga de pollo con un toque de limón que aporta frescura y sabor." },
+    { name: "PECHUGA A LA CREMA", price: "RD$450.00", desc: "Pechuga de pollo bañada en una salsa cremosa, suave y deliciosa." }
   ],
   "PA PICAR 🍟": [
-    { name: "CROQUETA DE POLLO", price: "RD$50.00" },
-    { name: "QUIPES DE RES", price: "RD$50.00" },
-    { name: "MOZZARELLA STICK", price: "RD$150.00" }
+    { name: "CROQUETA DE POLLO", price: "RD$50.00", desc: "Crujiente por fuera y suave por dentro, con un sabroso relleno de pollo." },
+    { name: "QUIPES DE RES", price: "RD$50.00", desc: "Quipes doraditos y crujientes, con un relleno de carne de res bien sazonada." },
+    { name: "MOZZARELLA STICK", price: "RD$150.00", desc: "Palitos de mozzarella dorados y crujientes, con queso fundido en cada mordida." }
   ],
   "LA COMPETENCIA DE LOS CHINOS 🍗": [
-    { name: "PICA POLLO", price: "RD$290.00" },
-    { name: "PICA POLLO 4 PIEZAS", price: "RD$580.00" },
-    { name: "PECHURINA AL LIMÓN", price: "RD$395.00" }
+    { name: "PICA POLLO", price: "RD$290.00", desc: "Pollo frito crujiente y bien sazonado, al clásico estilo dominicano." },
+    { name: "PICA POLLO 4 PIEZAS", price: "RD$580.00", desc: "Cuatro piezas de pollo frito, crujientes por fuera y jugosas por dentro." },
+    { name: "PECHURINA AL LIMÓN", price: "RD$395.00", desc: "Pechurina crujiente con un toque de limón, fresca y llena de sabor." }
   ]
 };
 
